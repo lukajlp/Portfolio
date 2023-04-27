@@ -90,7 +90,7 @@ body {
 .apresentacao__links__navegacao {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 1rem;
     border: 2px solid var(--cor-terciaria);
     width: 50%;
     text-align: center;
@@ -98,7 +98,7 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     font-family: var(--fonte-secundaria);
-    padding: 21.5px 0px;
+    padding: 21.5px 8px;
     text-decoration: none;
     color: var(--cor-secundaria);
 }
