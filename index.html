@@ -4,12 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portofolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="styles/style.css" />
     <link
       rel="stylesheet"
@@ -19,12 +13,14 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="m-auto" data-bs-theme="dark">
+  <body class="m-auto bg-body" data-bs-theme="dark">
     <header class="fixed-top container text-center">
-      <div class="row align-items-center">
+      <div class="row">
         <div class="col d-none d-lg-block"></div>
-        <div class="text-body-emphasis col-lg-10 col-1">
-          <nav class="navbar navbar-expand-lg bg-body d-inline-block">
+        <div class="text-body-emphasis col-lg-10 col-1 align-self-center">
+          <nav
+            class="navbar navbar-expand-lg bg-body d-inline-block bg-body-tertiary"
+          >
             <div class="container-fluid justify-content-center">
               <button
                 class="navbar-toggler"
@@ -45,16 +41,28 @@
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="#education">Education</a>
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="#projects"
+                      >Projects</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="#projects">Projects</a>
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="#skills"
+                      >Skills</a
+                    >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="#skills">Skills</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#contact">Contact</a>
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="#contact"
+                      >Contact</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -62,13 +70,11 @@
           </nav>
         </div>
         <div class="col-9 d-lg-none"></div>
-        <div class="col col-lg">
-          <div class="form-check form-switch mx-auto">
+        <div class="col col-lg align-self-lg-center align-self-start m-2">
+          <div class="form-check mx-auto">
             <input
-              class="form-check-input p-2"
+              class="form-check-input custom-checkbox p-2"
               type="checkbox"
-              role="switch"
-              id="flexSwitchCheckChecked"
               checked
               onclick="switchColorMode()"
             />
@@ -78,7 +84,7 @@
     </header>
     <main>
       <Presentation
-        class="p-3 text-body-emphasis d-flex justify-content-center text-align-center flex-column align-items-center"
+        class="d-flex justify-content-center text-align-center flex-column align-items-center text-body-emphasis p-3"
       >
         <img
           src="assets/Imagem.svg"
@@ -91,54 +97,44 @@
       <div>
         <div
           id="about"
-          class="d-flex justify-content-center align-items-center m-5 p-5"
+          class="d-flex justify-content-center align-items-center m-3 p-3"
         >
           <About
-            class="bg-body-secondary text-body-emphasis d-inline-block flex-fill p-5"
+            class="bg-body-secondary text-body-emphasis d-inline-block flex-fill p-3"
           >
             <h2 class="d-flex justify-content-center">About</h2>
             <div class="m-3">
               <p>
-                After graduating with honors in Computer Engineering at
-                University of Bologna, I further specialized my studies towards
-                AI and Cloud Computing by undertaking a Second Level
-                Specializing Master’s program at Polytechnic University of
-                Turin, achieved with full marks.
+                I have a bachelor's degree in Archeology from the Federal
+                University of Pernambuco (UFPE) with an focus on Space
+                Archeology and Environmental Archeology.
               </p>
               <p>
-                My skills focus on Artificial Intelligence, Cloud Computing,
-                Machine Learning, Computer Vision and Robotics, complemented by
-                a solid Software Engineering mindset.
+                I am currently studying for a bachelor's degree in Computer
+                Science at the Federal Rural University of Pernambuco (UFRPE).
+                I'm focusing my studies on Front-End and Computer Vision.
               </p>
               <p>
-                I consider myself a broad-minded, proactive and trustworthy
-                individual with effective communication skills.
+                I find the possibilities of Computer Vision in general, and
+                Archeology, fascinating.
               </p>
             </div>
           </About>
         </div>
         <div
-          id="education"
-          class="d-flex justify-content-center align-items-center p-5"
-        >
-          <Education class="bg-body text-body-emphasis d-inline-block p-5">
-            <h2 class="d-flex justify-content-center">Education</h2>
-          </Education>
-        </div>
-        <div
           id="projects"
-          class="d-flex justify-content-center align-items-center m-5 p-5"
+          class="d-flex justify-content-center align-items-center m-3 p-3"
         >
           <Projects
             id="repos"
-            class="bg-body-secondary text-body-emphasis d-inline-block flex-fill p-5"
+            class="bg-body-secondary text-body-emphasis d-inline-block p-5"
           >
             <h2 class="d-flex justify-content-center mb-5">Projects</h2>
           </Projects>
         </div>
         <Skills
           id="skills"
-          class="d-flex justify-content-center align-items-center m-5 p-5"
+          class="d-flex justify-content-center align-items-center m-3 p-3"
         >
           <Languages
             class="bg-body-secondary text-body-emphasis d-inline-block flex-fill"
@@ -154,36 +150,64 @@
         </Skills>
         <div
           id="contact"
-          class="d-flex justify-content-center align-items-center m-5 p-5"
+          class="d-flex justify-content-center align-items-center m-3 p-3"
         >
           <Contact
-            class="bg-body-secondary text-body-emphasis d-inline-block flex-fill p-4"
+            class="bg-body-secondary text-body-emphasis d-inline-block flex-fill p-3"
           >
             <h2 class="d-flex justify-content-center">Contact me</h2>
-            <div class="p-5 d-flex justify-content-center flex-column">
+            <form
+              onsubmit="sendEmail()"
+              action="https://formsubmit.co/28a1ab60fd7744f61fa57f84487c1c9e"
+              method="POST"
+              class="d-flex justify-content-center flex-column m-3 p-3 needs-validation flex-fill"
+              novalidate
+            >
+              <div class="mb-3">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control text-body-emphasis bg-body-tertiary has-validation"
+                  placeholder="Full name"
+                  aria-label="Full name"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+              </div>
               <div class="mb-3">
                 <input
                   type="email"
-                  class="form-control text-body-emphasis"
-                  id="exampleFormControlInput1"
+                  name="email"
+                  class="form-control text-body-emphasis bg-body-tertiary has-validation"
                   placeholder="name@example.com"
+                  aria-label="Email"
+                  aria-placeholder="name@example.com"
+                  required
                 />
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
               </div>
               <div class="mb-3">
                 <textarea
-                  class="form-control text-body-emphasis"
-                  id="exampleFormControlTextarea1"
+                  name="message"
+                  class="form-control text-body-emphasis bg-body-tertiary has-validation"
                   placeholder="Your text here"
+                  aria-label="Message"
                   rows="3"
+                  required
                 ></textarea>
+                <div class="invalid-feedback">Please enter some text.</div>
               </div>
               <button
                 type="submit"
-                class="btn btn-light d-flex align-items-center justify-content-center flex-fill text-primary gap-2"
+                class="btn btn-light border d-flex align-items-center justify-content-center flex-fill text-primary gap-2"
               >
                 Send <i class="fa-solid fa-paper-plane"></i>
               </button>
-            </div>
+            </form>
           </Contact>
         </div>
       </div>
@@ -203,31 +227,22 @@
               class="link-light"
               target="_blank"
             >
-              <i class="fa-brands fa-linkedin-in fa-xl"></i>
+              <i class="fa-brands fa-linkedin-in fa-xl text-body-emphasis"></i>
             </a>
             <a
               href="https://github.com/lukajlp"
               class="link-light"
               target="_blank"
             >
-              <i class="fa-brands fa-github fa-xl"></i>
+              <i class="fa-brands fa-github fa-xl text-body-emphasis"></i>
             </a>
           </div>
         </div>
       </div>
     </footer>
-    <script>
-      function switchColorMode() {
-        var element = document.body;
-        element.dataset.bsTheme =
-          element.dataset.bsTheme == "light" ? "dark" : "light";
-      }
-    </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/github.js"></script>
+    <script src="scripts/colormode.js"></script>
+    <script src="scripts/contact.js"></script>
   </body>
 </html>
