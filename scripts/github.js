@@ -9,14 +9,19 @@ function apiGithub() {
             throw new Error(res.status);
         }
         let data = await res.json();
-        let languages = [];
-        data.map(item => {
-            if(item.name !== 'lukajlp' && item.name !== 'Portfolio') {
-                item.language && !languages.includes(item.language) && languages.push(item.language);
+        let languages = new Set();
+        await Promise.all(data.map(async item => {
+
+                let res = await fetch(item.languages_url);
+                let langs = await res.json();
+                Object.keys(langs).forEach(lang => {
+                    languages.add(lang);
+                });
+                item.language && !languages.has(item.language) && languages.add(item.language);
 
                 let project = document.createElement('div');
                 let imgUrl = `https://raw.githubusercontent.com/lukajlp/${item.name}/master/img-description.gif`;
-    
+                if(item.name !== 'lukajlp' && item.name !== 'Portfolio') {
                 project.innerHTML = `
                 <div class="card mb-3 bg-body-tertiary">
                     <div class="row g-0">
@@ -37,9 +42,9 @@ function apiGithub() {
                 `
                 repositories.appendChild(project);
             }
-        })
+        }));
         console.log(languages);
-        languages.map(language => {
+        languages.forEach(language => {
             let skill = document.createElement('li');
 
             skill.innerHTML = `
