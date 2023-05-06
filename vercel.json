@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.html",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+    ],
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "install": {
+      "include": [
+        "node_modules/**"
+      ]
+    },
+    "functions": { "api/*.js": { "memory": 128 } },
+    "cleanUrls": true
+}
+  
